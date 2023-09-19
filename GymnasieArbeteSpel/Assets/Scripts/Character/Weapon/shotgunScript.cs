@@ -25,7 +25,7 @@ public class shotgunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shoot();
+        
     }
 
     void shoot()
@@ -36,6 +36,29 @@ public class shotgunScript : MonoBehaviour
         }
 
 
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        enemy Enemy = other.transform.GetComponent<enemy>();
+
+
+        if (Enemy)
+        {
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        enemy Enemy = other.transform.GetComponent<enemy>();
+
+
+        if (Enemy)
+        {
+
+        }
     }
 
     void shotgunAnim()
