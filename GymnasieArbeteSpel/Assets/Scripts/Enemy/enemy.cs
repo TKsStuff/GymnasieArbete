@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float enemyHP = 10f;
+    public EnemyManager enemyManager;
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        
+        enemyDeath();
+    }
+
+
+    public void enemyDeath()
+    {
+        if(enemyHP <= 0)
+        {
+            enemyManager.RemoveEnemy(this);
+            Destroy(gameObject);
+        }
+    }
+    public void damageTaken(float damage)
+    {
+        enemyHP -= damage;
     }
 }

@@ -11,6 +11,9 @@ public class shotgunScript : MonoBehaviour
     public float range;
     public float vRange;
     public EnemyManager enemyManager;
+    public float fireRate;
+    private float timeToFire;
+    public float damage = 10f;
    
 
     // Start is called before the first frame update
@@ -24,7 +27,26 @@ public class shotgunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonDown(0)&& Time.time > timeToFire)
+        {
+            shoot();
+        }
+    }
 
+
+
+    void shoot() 
+    {
+     foreach(var enemy in enemyManager.enemiesInTrigger)
+        {
+            enemy.damageTaken(damage);
+        }
+        
+        
+        
+        timeToFire = Time.time + fireRate;
+    
+    
     }
 
     private void OnTriggerEnter(Collider other)
