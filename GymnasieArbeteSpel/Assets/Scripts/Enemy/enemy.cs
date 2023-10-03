@@ -6,16 +6,18 @@ public class Enemy : MonoBehaviour
 {
     private float enemyHP = 10f;
     public EnemyManager enemyManager;
+    public Transform Player;
 
 
     void Start()
     {
-        
+
     }
 
    
     void Update()
     {
+        this.gameObject.transform.LookAt(Player);
         enemyDeath();
     }
 

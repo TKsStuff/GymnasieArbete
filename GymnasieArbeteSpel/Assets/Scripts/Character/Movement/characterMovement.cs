@@ -18,7 +18,7 @@ public class characterMovement : MonoBehaviour
     public float _yVelocity;
     public float jumpGrav = 1f;
     public float sprintSpeed;
-    public float normalSpeed;
+    public float walkSpeed;
     private float movementDamping = 2f;
 
 
@@ -113,24 +113,7 @@ public class characterMovement : MonoBehaviour
 
     }
 
-    void playerSprint() //sprint funktion
-    {
-        
-
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-
-            
-
-        }
-        else
-        {
-            
-        }
-
-
-    }
+    
     
 
     void playerDash() //maybe air dash only or both.
