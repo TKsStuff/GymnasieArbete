@@ -13,8 +13,9 @@ public class shotgunScript : MonoBehaviour
     public EnemyManager enemyManager;
     public float fireRate;
     private float timeToFire;
-    public float damage = 10f;
-   
+    public float Ndamage = 10f;
+    public float Ldamage = 5f;
+    public LayerMask raycastLayerMask;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,35 @@ public class shotgunScript : MonoBehaviour
     {
      foreach(var enemy in enemyManager.enemiesInTrigger)
         {
-            enemy.damageTaken(damage);
+            var dir = enemy.transform.position - transform.position;
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, dir, out hit, range * 1.5f, raycastLayerMask)) {
+
+                float dist = Vector3.Distance(enemy.transform.position, transform.position);
+
+                if (hit.transform == enemy.transform) {
+
+                    if(dist > range * 0.3f)
+                    {
+                        enemy.damageTaken(Ldamage);
+
+                    }
+                    else
+                    {
+                        enemy.damageTaken(Ndamage);
+                    }
+                  
+                   
+
+
+                }
+            
+            
+            }
+
+
+
         }
         
         
