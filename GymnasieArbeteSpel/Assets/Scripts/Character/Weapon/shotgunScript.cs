@@ -49,14 +49,19 @@ public class shotgunScript : MonoBehaviour
 
                 if (hit.transform == enemy.transform) {
 
-                    if(dist > range * 0.3f)
+                    if(dist > range * 0.5f)
                     {
                         enemy.damageTaken(Ldamage);
+                        Debug.DrawRay(transform.position, dir, Color.green);
+                        Debug.Break();
+
 
                     }
                     else
                     {
                         enemy.damageTaken(Ndamage);
+                        Debug.DrawRay(transform.position, dir, Color.red);
+                        Debug.Break();
                     }
                   
                    

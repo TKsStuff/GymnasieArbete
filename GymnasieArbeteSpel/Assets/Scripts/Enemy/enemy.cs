@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float enemyHP = 10f;
+    public float enemyHP = 10f;
     public EnemyManager enemyManager;
     public Transform Player;
 
