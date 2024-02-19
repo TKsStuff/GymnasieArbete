@@ -32,8 +32,7 @@ public class StairClimb : MonoBehaviour
             if (!Physics.Raycast(stepRayUpper.transform.position, transform.TransformDirection(Vector3.forward), out hitUpper, 0.4f))
             {
                 rigidBody.position -= new Vector3(0f, -stepSmooth * Time.deltaTime, 0f);
-                Debug.DrawRay(transform.position, Vector3.forward, Color.green);
-                Debug.Break();
+                
             }
         }
 

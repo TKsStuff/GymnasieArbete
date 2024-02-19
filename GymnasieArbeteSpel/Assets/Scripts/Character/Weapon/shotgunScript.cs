@@ -13,7 +13,7 @@ public class shotgunScript : MonoBehaviour
     public EnemyManager enemyManager;
     public float fireRate;
     private float timeToFire;
-    public float Ndamage = 10f;
+    public float Cdamage = 10f;
     public float Ldamage = 5f;
     public LayerMask raycastLayerMask;
 
@@ -52,16 +52,14 @@ public class shotgunScript : MonoBehaviour
                     if(dist > range * 0.5f)
                     {
                         enemy.damageTaken(Ldamage);
-                        Debug.DrawRay(transform.position, dir, Color.green);
-                        Debug.Break();
+                        
 
 
                     }
                     else
                     {
-                        enemy.damageTaken(Ndamage);
-                        Debug.DrawRay(transform.position, dir, Color.red);
-                        Debug.Break();
+                        enemy.damageTaken(Cdamage);
+                       
                     }
                   
                    
