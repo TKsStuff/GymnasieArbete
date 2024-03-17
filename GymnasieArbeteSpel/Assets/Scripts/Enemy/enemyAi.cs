@@ -20,7 +20,7 @@ public class enemyAi : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSight, playerInAttackRange;
 
-    //Enemy stats
+    // stats
     public int health;
 
 
@@ -40,7 +40,7 @@ public class enemyAi : MonoBehaviour
    
     void Update()
     {
-
+        //kallar på funktionerna chasePlayer och attacking när spelaren är inom en viss radie runt fienden
         playerInSight = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -87,7 +87,7 @@ public class enemyAi : MonoBehaviour
 
     private void chasePlayer()
     {
-
+        //Gör så att fiendens position som den ska gå till är där spelaren är
 
         agent.SetDestination(player.position);
         
