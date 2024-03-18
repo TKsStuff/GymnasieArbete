@@ -24643,7 +24643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2208684264056302888, guid: 891d49795f245044ca44ab5bf00b8c6e, type: 3}
-  shootForce: 10
+  shootForce: 50
   upwardForce: 0
   ammoCount: {fileID: 457878089}
   playerRB: {fileID: 21646626}
