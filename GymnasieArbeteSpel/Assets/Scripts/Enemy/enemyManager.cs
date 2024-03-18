@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
 
     public void AddEnemy(Enemy enemy)
     {
-        enemiesInTrigger.Add(enemy);
+        enemiesInTrigger.Add(enemy);    
     }
     public void RemoveEnemy(Enemy enemy)
     {
